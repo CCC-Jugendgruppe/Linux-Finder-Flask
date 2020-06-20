@@ -1,3 +1,9 @@
+import engine
+
+#Please follow the sceam: rather Gui[1] or Bash?[2]
+questions = ["Das ist eine Frage:", "Das ist noch eine Frage"]
+
+
 
 # first Version only wit a CMD overlay
 print("              a8888b.")
@@ -10,5 +16,7 @@ print("            d/      `8b.")
 print("           dP   .    Y8b.\n")
 print("Welcome to the Linux-Finder: \nThis Program helps you find the right Distro for you! \n\n")
 
-print("First Question:\n rather simple[1] or complex?[2]")
-simp_or_complex : int(input())
+
+engine.engine(questions)
+
+
