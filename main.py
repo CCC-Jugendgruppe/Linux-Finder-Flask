@@ -1,22 +1,13 @@
-import engine
+from engine import engine
 
 #Please follow the sceam: rather Gui[1] or Bash?[2]
-questions = ["Das ist eine Frage:", "Das ist noch eine Frage"]
 
-
-
+questions = ["Das ist eine Frage: bitte nur bis 1 und 5 ", "Das ist noch eine Fragenur bis null und 2"]
+min_points = [1, 0]
+max_points = [5, 2]
 # first Version only wit a CMD overlay
-print("              a8888b.")
-print("             d888888b.")
-print('             8P"YP"Y88')
-print("             8|o||o|88")
-print("             8'    .88")
-print("             8`._.' Y8.")
-print("            d/      `8b.")
-print("           dP   .    Y8b.\n")
-print("Welcome to the Linux-Finder: \nThis Program helps you find the right Distro for you! \n\n")
 
+#try out the help
+#help(engine)
 
-engine.engine(questions)
-
-
+engine(questions, min_points)
