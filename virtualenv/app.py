@@ -1,25 +1,19 @@
-from flask import Flask, request
+from flask import Flask, request, render_template, url_for
 
 app = Flask(__name__)
 
-@app.route("/")
+
+@app.route("/test")
 def index():
-    return"""Welcome to Linux-Finder
-    <br>
-    Erste Frage:
-    <br>
-    <form action="http://localhost:1337/answers" method = "get"> 
-    <input type = "text" name = "name"/>
-    <p> 
-    <input type="submit" value="submit"/>
-    </form>
-    
-    """
-@app.route("/answers", methods=["POST", "GET"])
-def answer():
-    
-    name = request.args.get('name')
-    return "Hello" + name
+    questions = ["Wie viel Ram hat dein Pc? ", "Wie viel Erfahrung hast du bereits"]
+    i = 0
+    for i in range(len(questions)):
+        question = {"question" : questions[i]}
+        answ1 = {"answ1" : "10GB"}
+        return render_template('dropdown.html', question = question, answ1 = answ1)
+
+
+
 
 #Note in production please use debug False
 if __name__ == "__main__":
