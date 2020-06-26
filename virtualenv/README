@@ -1,0 +1,8 @@
+##Instructions: 
+
+Dependencies:
+virtualenv 
+flask 
+
+Activate the virtualenv:
+source env/bin/activate
