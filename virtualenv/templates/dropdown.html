@@ -1,13 +1,15 @@
-{% extends "base.html"%}
 
 
-{% block body %}
+
+
 <h4 class="underline">{{question.question}}</h4>
-<br>
 
+<form action="http://127.0.0.1:5000/input/{{prog.prog}}/" method="get">
 {% for i in range(num_answ)%}
-<input type="radio" id="male" name="gender" value="male">
+<input type="radio" name="answer" value= "{{i}}" >
 <label for="male">{{answ1[i]}}</label><br>
 {% endfor %}
+<input type="submit" value="Daten senden">
+<br>
+</form>
 
-{% endblock body %}

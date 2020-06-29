@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, url_for
+from flask import Flask, request, render_template, url_for, make_response, redirect
 import json 
 
 #import everything from the param.json 
@@ -13,46 +13,52 @@ answers = param["answers"]
 #Flask startup routine
 app = Flask(__name__)
 
+global prog 
 
 #First the questions
-@app.route("/test/1")
+@app.route("/")
+def home():
+    return "Tesst"
+
+@app.route("/test/0")
 def index():
     answ_1 = answers["1"]
+    prog = {"prog" : 1}
     num_answ = answ_1[-1]
     quest = {"question" : questions[0]}
     type_answ = answ_1[-2] 
     if type_answ == "radio":
-        return render_template('dropdown.html', question = quest, answ1 = answ_1, num_answ = num_answ)
+        return render_template('dropdown.html', question = quest, answ1 = answ_1, num_answ = num_answ, prog = prog)
     else:
         return "else "
 
-@app.route("/test/2")
-def index_1():
-    answ_1 = answers["2"]
+@app.route("/test/1")
+def index_2():
+    answ_1 = answers["1"]
+    prog = {"prog" : 2}
     num_answ = answ_1[-1]
     quest = {"question" : questions[1]}
     type_answ = answ_1[-2] 
     if type_answ == "radio":
-        return render_template('dropdown.html', question = quest, answ1 = answ_1, num_answ = num_answ)
-    else:
-        return "else "
-@app.route("/test/3")
-def index_2():
-    answ_1 = answers["3"]
-    num_answ = answ_1[-1]
-    quest = {"question" : questions[2]}
-    type_answ = answ_1[-2] 
-    if type_answ == "radio":
-        return render_template('dropdown.html', question = quest, answ1 = answ_1, num_answ = num_answ)
+        return render_template('dropdown.html', question = quest, answ1 = answ_1, num_answ = num_answ, prog = prog)
     else:
         return "else "
 
 
-@app.route("/input/<inp>", methods=["GET", "POST"])
-def inputfun(inp):
-    dictionarry = {'Test': "Mein name", "noch ein Name":"mein Name", "True": None}
+@app.route("/input/<int:prog>/", methods=["GET", "POST"])
+def inputfun(prog):
+    answer = ""
+    if request == 'POST':
+        answer = request.form["answer"]
+    else:
+        answer = request.args.get("answer")
+    if prog > 1:
+        return redirect("/") 
+    domain = "/test/{}".format(prog) 
+    resp = make_response(redirect(domain))
+    resp.set_cookie(str(prog), answer)
+    return resp 
 
-    return dictionarry #json.dumps(inp)
 
 @app.route("/json")
 def jsonfun(dictionarry):
