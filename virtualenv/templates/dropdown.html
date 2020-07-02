@@ -4,7 +4,7 @@
 
 <h4 class="underline">{{question.question}}</h4>
 
-<form action="http://127.0.0.1:5000/input/{{prog.prog}}/" method="get">
+<form action="http://127.0.0.1:5000/input/{{prog.prog}}/{{cat.cat}}" method="get">
 {% for i in range(num_answ)%}
 <input type="radio" name="answer" value= "{{i}}" >
 <label for="male">{{answ1[i]}}</label><br>

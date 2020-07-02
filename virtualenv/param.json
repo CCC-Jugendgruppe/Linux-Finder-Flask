@@ -1,8 +1,8 @@
 {
-    "questions" : ["Wie viel Erfahrung hast du  mit Python?", "Das ist eine weitere Tolle Frage","noch eine Tolle Frage"],
+    "questions" : ["Wie viel Erfahrung hast du  mit Linux?", "Wie viel RAM hat dein PC?","noch eine Tolle Frage"],
     "answers" : {
-        "1" : ["Erste Antwort","Zweite Antwort1", "das ist Frage 3", "Das ist Frage 5 oder doch4?", "radio", 4],
-        "2" : ["Erste Antwort","Zweite Antwort1", "das ist Frage 3", "Das ist Frage 5 oder doch4?", "radio", 4],
-        "3" : ["Erste Antwort","Zweite Antwort1", "das ist Frage 3", "Das ist Frage 5 oder doch4?", "radio", 4]
+        "0" : ["Erste Antwort","Zweite Antwort1", "das ist Frage 3", "Das ist Frage 5 oder doch4?", "erfahrung" ,"radio", 4],
+        "1" : ["Erste Antwort","Zweite Antwort1", "das ist Frage 3", "Das ist Frage 5 oder doch4?","erfahrung" ,"radio", 4],
+        "2" : ["Erste Antwort","Zweite Antwort1", "das ist Frage 3", "Das ist Frage 5 oder doch4?","erfahrung" ,"radio", 4]
     }
 }
