@@ -1,8 +1,11 @@
-##Instructions: 
+## Instructions: 
 
-Dependencies:
+
+# Dependencies:
 virtualenv 
 flask 
 
-Activate the virtualenv:
+# Activate the virtualenv:
 source env/bin/activate
+
+Please note, to use this code properly please use a webserver.
