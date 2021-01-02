@@ -9,3 +9,5 @@ flask
 source env/bin/activate
 
 Please note, to use this code properly please use a proxy webserver.
+
+# Note when using windows or mac os please change the path in the .vscode folder.
