@@ -8,4 +8,4 @@ flask
 # Activate the virtualenv:
 source env/bin/activate
 
-Please note, to use this code properly please use a webserver.
+Please note, to use this code properly please use a proxy webserver.
